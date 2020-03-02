@@ -1,0 +1,101 @@
+// =======文字大小======
+// 大文字
+$lg:20px;
+
+// =======文字颜色======
+// 浅黑色字体
+$lblack:#666;
+
+
+// =======圆角======
+// 圆角类参数
+$panel-radius:10px;
+
+// ======公共类======
+// 当行一行文本超出省略
+.txt-short{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+// 当两行文本超出换行省略
+.txt-short-double{
+	text-align: left;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+}
+
+// 当三行文本超出换行省略
+.txt-short-twice{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:3;
+}
+
+// ========原生组件样式覆盖========
+// input去除样式
+input{  
+    background:none;  
+    outline:none;  
+    border:none;
+}
+
+// 修改input样式
+input::-webkit-input-placeholder{
+		color:#eee;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+		color:#eee;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+		color:#eee;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+		color:#eee;
+}
+
+// =====ui库默认样式覆盖======
+// 我的页面tabs页面的上重置样式
+#my{
+	.my-order-wrap{
+		margin-top: 20px;
+		background: #fff;
+		border-radius: $panel-radius;
+		.van-tabs__wrap{
+			border-bottom: 1px solid #eee;
+		}
+	}
+}
+
+.van-cell{
+	&:after{
+		border-bottom: 1px solid #fff !important;
+		// border-bottom: 1px solid #eee !important;
+		// content: "";
+		// width: 90%;
+		// height: 1px;
+		// background: #eee;
+	}
+}
+
+// label间距平均
+.form-wrap{
+	.van-cell{
+		padding: 10px 0;
+		// border-bottom: 0.0005rem solid #666;
+	}
+	.van-field__body{
+		font-size: 16px;
+	}
+	.van-cell__title{
+		padding: 0 18px;
+		// display: none !important;
+		text-align-last: justify;
+	}
+}

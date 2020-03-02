@@ -1,0 +1,66 @@
+<template>
+  <div>
+		testIndex
+		<div class="test-color" v-for="(item,index) in 6" :key="index">
+			123
+		</div>
+		<el-button type="warning" round>警告按钮</el-button>
+		<div id="main" style="width: 600px;height:400px;"></div>
+  </div>
+</template>
+
+<script>
+import dateUtils from '@/utils/dateUtils.js';
+import storageUtils from '@/utils/storageUtils.js';
+import validateUtils from '@/utils/validateUtils.js';
+
+export default {
+	name:'order',
+	components: {
+    
+	},
+
+	data() {
+		return {
+
+		};
+	},
+
+	mounted(){
+		
+		// 基于准备好的dom，初始化echarts实例
+		        var myChart = echarts.init(document.getElementById('main'));
+		
+		        // 指定图表的配置项和数据
+		        var option = {
+		            title: {
+		                text: 'ECharts 入门示例'
+		            },
+		            tooltip: {},
+		            legend: {
+		                data:['销量']
+		            },
+		            xAxis: {
+		                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+		            },
+		            yAxis: {},
+		            series: [{
+		                name: '销量',
+		                type: 'bar',
+		                data: [5, 20, 36, 10, 10, 20]
+		            }]
+		        };
+		
+		        // 使用刚指定的配置项和数据显示图表。
+		        myChart.setOption(option);
+	},
+
+	  methods: {
+		
+	  }
+};
+</script>
+
+<style lang="scss" scoped>
+
+</style>
