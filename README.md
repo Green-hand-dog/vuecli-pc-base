@@ -1,5 +1,7 @@
 # demo
-
+```
+vue脚手架pc端基础配置工程
+```
 ## Project setup
 ```
 npm install
